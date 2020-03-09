@@ -160,25 +160,24 @@ The following have been reloaded with a version change:
 Lmod automatically changes the `jellyfish` module to one that was compiled with `intel`.
 
 ## Running jobs
-The new system will continue to use the SLURM job scheduler so it shouldn't be necessary to make changes to your job scripts (unless you request specific partitions or hardware not available in the test cluster).
-
+The new system will continue to use the SLURM job scheduler.
 As a reminder, you can find our documenation on Slurm here:
 https://hpcc.usc.edu/support/documentation/slurm/
 
-Using the job scheduler should be the same but there are few user-facing changes of note:
+Using the job scheduler should be the same but there are few changes of note:
 
-* Max wall-time of 2 days in `main` partition
-* Each user can use 96 CPU cores in `main` partition regardless of number of jobs
-* Each user can submit 2000 jobs in `main` partition
+* `main` partition max wall-time is 48 hours.
+* Each user can use 96 CPU cores in `main` partition regardless of number of jobs and submit up to 2000 jobs
 * If you don't specify any partition, it will default to `main`
-* New `oneweek` partition for runs of up to 1 week, each user can use 12 CPU cores regardless of number of jobs and submit 50 jobs.
+* New `oneweek` partition with max wall-time one week
+* Each user can use 12 CPU cores regardless of number of jobs and submit up to 50 jobs.
 
 ### Resources and limits summary
 
-|partition|Nodes|CPUS|RAM(GB)|MaxCPUsPerUser|MaxSubmitJobsPerUser|
-|---|---|---|---|---|---|
-|main |11 | 24|95 |96|2000|
-|oneweek |2 | 24|95 |12|50|
+|partition|Nodes|CPUS|RAM(GB)|MaxCPUsPerUser|MaxSubmitJobsPerUser|Default|
+|---|---|---|---|---|---|---|
+|main |11 | 24|95 |96|2000|Yes|
+|oneweek |2 | 24|95 |12|50|No|
 
 ### Example Job script
 
