@@ -26,6 +26,7 @@ To check your current usage of quota on /home1 use:
 ```
 lfs quota -h -u $USER /home1
 ```
+this check is also included in /usr/local/bin/myquota on `discovery.usc.edu`
 
 ###  Current Project directory (Read only)
 To make it easier to start testing, your project directory is available on a read-only basis to `discovery.usc.edu`
@@ -201,8 +202,10 @@ for a parallel running job:
 
 ```
 #!/bin/bash
-#SBATCH -n 200
-#SBATCH -t 5:00
+#SBATCH --ntasks=64
+#SBATCH --cpus-per-task=1
+#SBATCH --mem-per-cpu=2GB
+#SBATCH --time=1:00:00
 
 module purge
 module load usc  
