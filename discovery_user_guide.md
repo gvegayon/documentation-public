@@ -159,9 +159,30 @@ The following have been reloaded with a version change:
 
 Lmod automatically changes the `jellyfish` module to one that was compiled with `intel`.
 
+### Module settings
+
+Loading the desired module will make some changes to our environment. Some common settings include:
+
+|Environment Variable|Description|
+|-|-|
+|`{NAME}_ROOT`|Creates environment variable {NAME}_ROOT which points to the root directory of installation|
+|`PATH`|Adds `{NAME}_ROOT/bin` to PATH|
+|`MANPATH`| Adds `{NAME}_ROOT/share/man` to search manual path|
+|`LD_LIBRARY_PATH`| Adds appropriate library directory to library search path|
+|`PKG_CONFIG_PATH`| Enables package to be found by `pkg-config`, useful for building other software|
+|`CMAKE_PREFIX_PATH`| Enables package build settings to be found by `cmake`, useful for building other software|
+
+Every package is different, some will have extra environment variables while others will have fewer. For example, Intel compilers will have a `INTEL_LICENSE_FILE` setting while Boost has not directory to add to `PATH`.
+
+### Installing new software
+
+Most likely you will need to build your own software and it will have other software it is dependent on. In order to ensure reproducibility the login node has minimal software installed through the operating system. All dependencies must either be resolved through the module system or be built by the user.
+
+Applicable modules also add the appropriate directory to `PKG_CONFIG_PATH`. This enables build systems such as configure scripts and cmake, which often use the pkg-config utility, to automatically detect dependent software. If this is unsupported by the build system, you may have to manually point the installer to dependent software.To aid in this process all modules have an associated environment variable `{NAME}_ROOT` where `{NAME}` is the name of the module. For example the Python module has `PYTHON_ROOT`.
+
 ## Running jobs
 The new system will continue to use the SLURM job scheduler.
-As a reminder, you can find our documenation on Slurm here:
+As a reminder, you can find our documentation on Slurm here:
 https://hpcc.usc.edu/support/documentation/slurm/
 
 Using the job scheduler should be the same but there are few changes of note:
