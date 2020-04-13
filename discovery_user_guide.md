@@ -8,6 +8,18 @@ Please direct any questions regarding the test system to hpc-support@usc.edu. Al
 ## Logging in
 You can access the test cluster at the hostname `discovery.usc.edu`. Authentication should be the same as `hpc-login3.usc.edu`.
 
+As a reminder, you will need an ssh client. Most operating systems have a built-in ssh client. Mac and Linux machines have 'terminal' while Windows has one in the 'Command Prompt' utility. If your computer does not have an ssh client you can install one such as PuTTY.
+
+After opening the command line utility for your operating system type
+
+    ssh <user_name>@discovery.usc.edu
+
+where `<user_name>` is your USC NetID (your email address without "@usc.edu"). If this is your first time logging in you may see scary looking message asking if you trust this host. Type 'yes' (or similar) to continue. You will then be prompted for your password. Enter your USC NetID password (the one you use for other USC services).
+
+**Note:** They may be **no** visual feedback as you enter your password. This is a security feature designed to obscure your password and is expected.
+
+After entering your password you will then be prompted for Duo authentication. Select your preferred Duo method. If you have none set up, you can create one by following along with ITS's documentation here: https://itservices.usc.edu/duo/
+
 If you encounter issues connecting to `discovery` while off campus, it may be necessary to first connect to a VPN. Please see this page for information on setting it up: https://itservices.usc.edu/vpn/.
 
 ## Storing data
@@ -178,7 +190,7 @@ Every package is different, some will have extra environment variables while oth
 
 Most likely you will need to build your own software and it will have other software it is dependent on. In order to ensure reproducibility the login node has minimal software installed through the operating system. All dependencies must either be resolved through the module system or be built by the user.
 
-Applicable modules also add the appropriate directory to `PKG_CONFIG_PATH`. This enables build systems such as configure scripts and cmake, which often use the pkg-config utility, to automatically detect dependent software. If this is unsupported by the build system, you may have to manually point the installer to dependent software.To aid in this process all modules have an associated environment variable `{NAME}_ROOT` where `{NAME}` is the name of the module. For example the Python module has `PYTHON_ROOT`.
+Applicable modules add the appropriate directory to `PKG_CONFIG_PATH`. This enables build systems such as configure scripts and cmake, which often use the pkg-config utility, to automatically detect dependent software. If this is unsupported by the build system, you may have to manually point the installer to dependent software.To aid in this process all modules have an associated environment variable `{NAME}_ROOT` where `{NAME}` is the name of the module. For example the Python module has `PYTHON_ROOT`.
 
 ## Running jobs
 The new system will continue to use the SLURM job scheduler.
