@@ -60,7 +60,7 @@ on /scratch. There's no backup of any sort on /scratch.
 ### Transfering data
 You can use `discovery.usc.edu` directly as data transfer node. scp and sftp are recommended.
 
-## Software Modules (lmod)
+## Software Modules (Lmod)
 One of the biggest user-facing changes to the test cluster is trading the setup.sh method of using software for the module system. Lmod has the ability to track software dependencies to ensure you have better control of your environment. (No more logging out and then back in to reset your environment!)
 
 The official documentation for Lmod can be found here: https://lmod.readthedocs.io/en/latest/010_user.html
@@ -173,7 +173,7 @@ Lmod automatically changes the `jellyfish` module to one that was compiled with 
 
 ### Module settings
 
-Loading the desired module will make some changes to our environment. Some common settings include:
+Loading the desired module will make some changes to the environment. Some common settings include:
 
 |Environment Variable|Description|
 |-|-|
@@ -184,7 +184,7 @@ Loading the desired module will make some changes to our environment. Some commo
 |`PKG_CONFIG_PATH`| Enables package to be found by `pkg-config`, useful for building other software|
 |`CMAKE_PREFIX_PATH`| Enables package build settings to be found by `cmake`, useful for building other software|
 
-Every package is different, some will have extra environment variables while others will have fewer. For example, Intel compilers will have a `INTEL_LICENSE_FILE` setting while Boost has not directory to add to `PATH`.
+Every package is different, some will have extra environment variables while others will have fewer. For example, Intel compilers will have a `INTEL_LICENSE_FILE` setting while Boost has  directory to add to `PATH`.
 
 ### Python Packages
 
