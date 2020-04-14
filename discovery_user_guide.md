@@ -203,13 +203,29 @@ To install new packages you can install them to your home directory like so
 
     pip3 install --user
 
+### R Packages
 
+R packages are not currently tracked in the module system. To find available packages you can start up `R` and use the `installed.packages()` command like so
+
+    packs <- installed.packages()
+    names(packs[,'Package'])
+    [1] "abind"                "acepack"              "AnnotationDbi"       
+    [4] "askpass"              "assertthat"           "backports"           
+    [7] "base"                 "base64enc"            "BH"                  
+    [10] "Biobase"              "BiocFileCache"        "BiocGenerics"        
+    [13] "BiocManager"          "BiocParallel"         "BiocVersion"         
+    ...
+    ...
+
+To install new packages you can install them to your home directory like so:
+
+    install.packages('package_name')
 
 ### Installing new software
 
 Most likely you will need to build your own software and it will have other software it is dependent on. In order to ensure reproducibility the login node has minimal software installed through the operating system. All dependencies must either be resolved through the module system or be built by the user.
 
-Applicable modules add the appropriate directory to `PKG_CONFIG_PATH`. This enables build systems such as configure scripts and cmake, which often use the pkg-config utility, to automatically detect dependent software. If this is unsupported by the build system, you may have to manually point the installer to dependent software.To aid in this process all modules have an associated environment variable `{NAME}_ROOT` where `{NAME}` is the name of the module. For example the Python module has `PYTHON_ROOT`.
+Applicable modules add the appropriate directory to `PKG_CONFIG_PATH`. This enables build systems such as configure scripts and cmake, which often use the `pkg-config` utility, to automatically detect dependent software. If this is unsupported by the build system, you may have to manually point the installer to dependent software.To aid in this process all modules have an associated environment variable `{NAME}_ROOT` where `{NAME}` is the name of the module. For example the Python module has `PYTHON_ROOT`.
 
 ## Running jobs
 The new system will continue to use the SLURM job scheduler.
