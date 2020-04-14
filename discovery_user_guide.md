@@ -186,6 +186,25 @@ Loading the desired module will make some changes to our environment. Some commo
 
 Every package is different, some will have extra environment variables while others will have fewer. For example, Intel compilers will have a `INTEL_LICENSE_FILE` setting while Boost has not directory to add to `PATH`.
 
+### Python Packages
+
+Python packages are not currently tracked in the module system. To find available packages you can use the `pip3` command like so
+
+    pip3 freeze
+    appdirs==1.4.3
+    atomicwrites==1.3.0
+    attrs==19.3.0
+    backcall==0.1.0
+    cffi==1.14.0
+    ...
+    ...
+
+To install new packages you can install them to your home directory like so
+
+    pip3 install --user
+
+
+
 ### Installing new software
 
 Most likely you will need to build your own software and it will have other software it is dependent on. In order to ensure reproducibility the login node has minimal software installed through the operating system. All dependencies must either be resolved through the module system or be built by the user.
@@ -209,7 +228,7 @@ Using the job scheduler should be the same but there are few changes of note:
 
 |partition|Nodes|CPUS|RAM(GB)|MaxCPUsPerUser|MaxSubmitJobsPerUser|Default|
 |---|---|---|---|---|---|---|
-|main |11 | 24|95 |96|2000|Yes|
+|main |20 | 24|95 |384|5000|Yes|
 |oneweek |2 | 24|95 |12|50|No|
 
 ### Example Job script
