@@ -209,9 +209,9 @@ R packages are not currently tracked in the module system. To find available pac
 
     packs <- installed.packages()
     names(packs[,'Package'])
-    [1] "abind"                "acepack"              "AnnotationDbi"       
-    [4] "askpass"              "assertthat"           "backports"           
-    [7] "base"                 "base64enc"            "BH"                  
+     [1] "abind"                "acepack"              "AnnotationDbi"       
+     [4] "askpass"              "assertthat"           "backports"           
+     [7] "base"                 "base64enc"            "BH"                  
     [10] "Biobase"              "BiocFileCache"        "BiocGenerics"        
     [13] "BiocManager"          "BiocParallel"         "BiocVersion"         
     ...
@@ -219,7 +219,7 @@ R packages are not currently tracked in the module system. To find available pac
 
 To install new packages you can install them to your home directory like so:
 
-    install.packages('package_name')
+
 
 ### Installing new software
 
