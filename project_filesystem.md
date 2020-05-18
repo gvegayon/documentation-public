@@ -26,7 +26,7 @@ because of small capacity of /staging, HPC is planning to replace it with a much
 
 ## Backups
 
-There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss.
+There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least tripple copies.)
 
 ## Installing software
 
