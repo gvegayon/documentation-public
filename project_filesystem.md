@@ -4,37 +4,35 @@ Starting around mid-March, users began reporting multiple issues due to high loa
 
 We've since stabilized the filesystem but have made it read-only to decrease the load and prevent further file access issues. The filesystem will remain in this state until June when we can deploy a new, previously planned filesystem and migrate all project data.
 
-**In the meantime we have brought up an all new high-performing file system /scratch **
+## /scratch - an all new high-performing parallel file system 
 
-/staging only have 266TB usable space, /scratch have 806TB and IO performance is twice more. Each user account is limited to 10TB quota on /scratch. If you need more, please contact us.
-
-# How to use scratch
+We have brought up the /scratch file system, which is 806TB (compared to 266TB /staging) and IO performance is twice more than /staging. Each user account is limited to 10TB quota on /scratch. If you need more, please contact us.
 
 Your scratch directory is located at:
 
     /scratch/<username>
 
-## What data should move to scratch?
+### What data should move to scratch?
 
 If your job is IO intensive, you should put your input and output data on /scratch. Your scratch directory is accessible only to you.
 
-# How to use staging
+### NOTE: /staging is going away soon !
 
 Your staging directory is located at:
 
     /staging/<proj_name>/<user_name>
 
-NOTE: because of small capacity of /staging, HPC is planning to replace it with a much bigger and newer file system. So please migrate your data to /scratch at your earliest convenience. 
+because of small capacity of /staging, HPC is planning to replace it with a much bigger and newer file system. So please migrate your data to /scratch at your earliest convenience. 
 
-# Backups
+## Backups
 
 There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent acciental data loss.
 
-# Installing software
+## Installing software
 
 Installing software on staging and scratch should be as easy as installing it to your project directory. However, there are some special cases. If you require further assistance, please contact us at hpc@usc.edu.
 
-## Python
+### Python
 
 Python allows you to install and load packages from arbitrary directories.
 
@@ -50,7 +48,7 @@ To load a package, ensure you have appended your `PYTHONPATH` environment variab
 
     export PYTHONPATH=${package_root}/lib/python3.7/site-packages:${PYTHONPATH}
 
-## R
+### R
 
 R allows you to install and load packages from arbitrary directories.
 
