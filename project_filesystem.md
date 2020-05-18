@@ -18,7 +18,7 @@ Your scratch directory is located at:
 
 ## What data should move to scratch?
 
-Your scratch directory is accessible only to you, so any files that you wish to share with your lab members should be saved to staging. Use of **scratch is preferred over staging**, if possible, since it has more available space.
+Your scratch directory is accessible only to you, so any files that you wish to share with your lab members should be saved to staging. **Use of scratch is preferred over staging**, if possible, since it has more available space.
 
 # How to use staging
 
@@ -34,7 +34,7 @@ Staging is meant to be a collaborative space for research groups. Save data that
 
 # Backups
 
-Staging and scratch are intended as temporary filesystems and there is currently **no backup process** to protect data in the event of accidental deletion or hardware failure. We have disabled any automatic data purging policies on staging and scratch so your files will not be automatically deleted, but please **copy important files out of staging and scratch** as soon as possible to protect them.
+Scratch and staging are intended as temporary filesystems and there is currently **no backup process** to protect data in the event of accidental deletion or hardware failure. We have disabled any automatic data purging policies on scratch and staging so your files will not be automatically deleted, but please **copy important files out of scratch and staging** as soon as possible to protect them.
 
 # Installing software
 
