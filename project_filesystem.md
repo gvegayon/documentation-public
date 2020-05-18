@@ -26,7 +26,7 @@ because of small capacity of /staging, HPC is planning to replace it with a much
 
 ### Where should I make the data migration?
 
-On hpc-transfer, hpc-transfer is recently upgraded with 40GB links, it can migrate data in and out much faster than login nodes.
+On hpc-transfer, hpc-transfer is recently upgraded with new hardware and new 40GB links, it can migrate data in and out much faster than login nodes.
 
 ## Backups
 
