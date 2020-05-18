@@ -24,6 +24,10 @@ Your staging directory is located at:
 
 because of small capacity of /staging, HPC is planning to replace it with a much bigger and newer file system. So please migrate your data to /scratch at your earliest convenience. 
 
+### Where should I make the data migration?
+
+On hpc-transfer, hpc-transfer is recently upgraded with 40GB links, it can migrate data in and out much faster than login nodes.
+
 ## Backups
 
 There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least tripple copies.)
