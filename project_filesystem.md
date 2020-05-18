@@ -4,12 +4,11 @@ Starting around mid-March, users began reporting multiple issues due to high loa
 
 We've since stabilized the filesystem but have made it read-only to decrease the load and prevent further file access issues. The filesystem will remain in this state until June when we can deploy a new, previously planned filesystem and migrate all project data.
 
-**In the meantime, we are requesting that users use either their /scratch or /staging filesystem for their production runs.**
+**In the meantime, we are requesting that users use either their /scratch or /staging directory for their production runs.**
 
-Both the scratch and staging directories have much less available disk space than the project filesystem so please **only copy necessary files**. In general, if it doesn't need to be edited or updated, keep it in your read-only project directory. New files can be written to either but /scratch is preferred.
+Both the scratch and staging directories have much less available disk space than the project filesystem, so please **only copy necessary files** to these directories. In general, if it doesn't need to be edited or updated, keep it in your read-only project directory. New files can be written to either scratch or staging, but **scratch is preferred**.
 
-
-Most programs have a method to use input files even if they aren't in the working directory. If you need help getting your program to read files from your project directory and write out in your staging directory, please contact us at hpc@usc.edu
+Most programs have a method to use input files even if they aren't in the working directory. If you need help getting your program to read files from your project directory and write out in your scratch or staging directory, please contact us at hpc@usc.edu
 
 # How to use scratch
 
@@ -19,7 +18,7 @@ Your scratch directory is located at:
 
 ## What data should move to scratch?
 
-Your scratch directory is accessible only to you so any files that you wish to share with your lab members should be saved to staging. Use of **scratch is preferred over staging** since it has more available space.
+Your scratch directory is accessible only to you, so any files that you wish to share with your lab members should be saved to staging. Use of **scratch is preferred over staging**, if possible, since it has more available space.
 
 # How to use staging
 
@@ -35,11 +34,11 @@ Staging is meant to be a collaborative space for research groups. Save data that
 
 # Backups
 
-Staging and Scratch are intended a temporary filesystem and there is currently **no backup process** to protect data in the event of accidental deletion or hardware failure. We have disabled the automatic data purging policy on /staging so your files will not be automatically deleted, but please **copy important files out of staging** as soon as possible to protect them.
+Staging and scratch are intended as temporary filesystems and there is currently **no backup process** to protect data in the event of accidental deletion or hardware failure. We have disabled any automatic data purging policies on staging and scratch so your files will not be automatically deleted, but please **copy important files out of staging and scratch** as soon as possible to protect them.
 
 # Installing software
 
-Installing software on staging should be as easy as installing it to your project directory. However, there are some special cases. If you require further assistance, please contact us at hpc@usc.edu.
+Installing software on staging and scratch should be as easy as installing it to your project directory. However, there are some special cases. If you require further assistance, please contact us at hpc@usc.edu.
 
 ## Python
 
