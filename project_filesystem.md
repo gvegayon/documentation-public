@@ -4,37 +4,43 @@ Starting around mid-March, users began reporting multiple issues due to high loa
 
 We have since stabilized the filesystem but have made it read-only to decrease the load and prevent further file access issues. The filesystem will remain in this state until June when we can deploy a new, previously planned filesystem and migrate all project data.
 
-## /scratch - an all new high-performing parallel filesystem
+Previously, users were instructed to run their jobs in the /staging filesystem until our new project filesystem was up and running. However, /staging nearly reached its limited capacity within a few weeks. As a result, we have created a new, high-performing parallel filesystem for production runs called **/scratch**, which has a much larger capacity than /staging.
 
-We have brought up the /scratch filesystem, which is 806TB (compared to 266TB /staging) and IO performance is twice more than /staging. Each user account is limited to 10TB quota on /scratch. If you need more, please contact us at hpc@usc.edu.
+## /scratch: an all new, high-performing parallel filesystem
 
 Your scratch directory is located at:
 
     /scratch/<username>
 
-### What data should move to scratch?
+You should now be using /scratch for your production runs instead of /staging.
 
-If your job is IO intensive, you should put your input and output data on /scratch. Your scratch directory is accessible only to you.
+The new /scratch filesystem has a capacity of 806TB (compared to 266TB on /staging) and it can sustain 25GB/s of reading and writing performance, which is almost twice as much as /staging.
 
-### NOTE: /staging is going away soon!
+Your scratch directory is accessible only to you, and each user account is limited to a 10TB quota. If you need more space than this, please contact us at hpc@usc.edu.
+
+## /staging: soon to be decommissioned
 
 Your staging directory is located at:
 
     /staging/<proj_name>/<user_name>
 
-because of small capacity of /staging, HPC is planning to replace it with a much bigger and newer file system. So please migrate your data to /scratch at your earliest convenience. 
+We are preparing to replace the current /staging filesystem with another 1PB high-performing parallel file system in the next few weeks. Once the upgraded file system comes up, each user will receive another 10-20TB quota.
 
-### Where should I make the data migration?
+In order to upgrade the system, we ask that you **migrate your data on /staging to /scratch** as soon as possible.
 
-Migrate data on hpc-transfer, which has been recently upgraded with new hardware and new 40GB links, it can migrate data in and out much faster than login nodes. Please note, regenerating data is much faster than copying around data. So if you have a large custom Python or R installtion under /staging, do not copy that but just re-install from scratch under /scratch.
+### How should I perform the data migration from /staging to /scratch?
+
+Migrate data on the hpc-transfer node, which has been recently upgraded with new hardware and new 40GB links. It can migrate data in and out much faster than the login nodes. Instructions on how to transfer files using hpc-transfer can be found here: https://github.com/uschpc/documentation-public/blob/master/hpc-transfer-guide.md
+
+Please note: regenerating data is much faster than copying data. For example, if you have a large custom Python or R installation under /staging, simply re-install under /scratch rather than copying.
 
 ## Backups
 
-There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least three copies.)
+There are no backups for either /scratch or /staging. Please keep additional copies of your important data elsewhere to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least three copies.)
 
 ## Installing software
 
-Installing software on /staging and /scratch should be as easy as installing it to your project directory. However, there are some special cases where it is more difficult. If you require further assistance, please contact us at hpc@usc.edu.
+Installing software on /scratch should be as easy as installing it to your project directory. However, there are some special cases where it is more difficult. If you require further assistance, please contact us at hpc@usc.edu.
 
 ### Python
 
