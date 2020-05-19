@@ -1,12 +1,12 @@
 # Project Filesystem Status
 
-Starting around mid-March, users began reporting multiple issues due to high load on our filesystem that hosts /rcf-proj2 and /rcf-proj3 . This has caused problems for users trying to log in, access files, or run interactive jobs.
+Starting around mid-March, users began reporting multiple issues due to high load on our filesystem that hosts /rcf-proj2 and /rcf-proj3. This has caused problems for users trying to log in, access files, or run interactive jobs.
 
-We've since stabilized the filesystem but have made it read-only to decrease the load and prevent further file access issues. The filesystem will remain in this state until June when we can deploy a new, previously planned filesystem and migrate all project data.
+We have since stabilized the filesystem but have made it read-only to decrease the load and prevent further file access issues. The filesystem will remain in this state until June when we can deploy a new, previously planned filesystem and migrate all project data.
 
-## /scratch - an all new high-performing parallel file system 
+## /scratch - an all new high-performing parallel filesystem
 
-We have brought up the /scratch file system, which is 806TB (compared to 266TB /staging) and IO performance is twice more than /staging. Each user account is limited to 10TB quota on /scratch. If you need more, please contact us.
+We have brought up the /scratch filesystem, which is 806TB (compared to 266TB /staging) and IO performance is twice more than /staging. Each user account is limited to 10TB quota on /scratch. If you need more, please contact us at hpc@usc.edu.
 
 Your scratch directory is located at:
 
@@ -16,7 +16,7 @@ Your scratch directory is located at:
 
 If your job is IO intensive, you should put your input and output data on /scratch. Your scratch directory is accessible only to you.
 
-### NOTE: /staging is going away soon !
+### NOTE: /staging is going away soon!
 
 Your staging directory is located at:
 
@@ -26,15 +26,15 @@ because of small capacity of /staging, HPC is planning to replace it with a much
 
 ### Where should I make the data migration?
 
-On hpc-transfer, hpc-transfer is recently upgraded with new hardware and new 40GB links, it can migrate data in and out much faster than login nodes. Please note, regenerating data is much faster than copying around data. So if you have a large custom python or R installtion under /staging, don't copy that but just re-install from scratch under /scratch.
+Migrate data on hpc-transfer, which has been recently upgraded with new hardware and new 40GB links, it can migrate data in and out much faster than login nodes. Please note, regenerating data is much faster than copying around data. So if you have a large custom Python or R installtion under /staging, do not copy that but just re-install from scratch under /scratch.
 
 ## Backups
 
-There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least tripple copies.)
+There are no backups for either /scratch or /staging. Please keep additional copies of your important data to prevent accidental data loss. (If your PhD thesis relies on your data, keep at least three copies.)
 
 ## Installing software
 
-Installing software on staging and scratch should be as easy as installing it to your project directory. However, there are some special cases. If you require further assistance, please contact us at hpc@usc.edu.
+Installing software on /staging and /scratch should be as easy as installing it to your project directory. However, there are some special cases where it is more difficult. If you require further assistance, please contact us at hpc@usc.edu.
 
 ### Python
 
@@ -68,4 +68,4 @@ Where `package_path` is the absolute path to where you want your R packages to b
 
 To load an R package, run a command of the form:
 
-    library("package_name",lib.loc="package_path")
+    library("package_name", lib.loc="package_path")
